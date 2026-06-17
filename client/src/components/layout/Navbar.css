@@ -1,0 +1,116 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  box-shadow: 0 2px 16px rgba(15,31,61,0.18);
+  height: 66px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 7px 13px;
+  border-radius: 7px;
+  transition: var(--transition);
+}
+.nav-link:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-link.active { color: var(--gold); background: rgba(201,168,76,0.12); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.88rem;
+}
+
+.admin-pill {
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  color: var(--white);
+  padding: 4px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 8px 16px;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.logout-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 66px;
+    left: 0; right: 0;
+    background: var(--navy-mid);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 4px;
+    box-shadow: var(--shadow-lg);
+  }
+  .nav-links.open { display: flex; }
+  .nav-link { width: 100%; }
+  .hamburger { display: flex; }
+  .nav-user span:not(.admin-pill) { display: none; }
+  .logout-btn span { display: none; }
+  .logout-btn { padding: 8px 10px; }
+}

@@ -1,0 +1,16 @@
+.books-filters { margin-bottom: 28px; display: flex; flex-direction: column; gap: 14px; }
+.search-form { display: flex; gap: 10px; max-width: 420px; }
+.search-form .form-input { flex: 1; }
+.filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.filter-pill {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: var(--white);
+  color: var(--text-mid);
+  border: 1.5px solid var(--cream-dark);
+  transition: var(--transition);
+}
+.filter-pill:hover  { border-color: var(--navy); color: var(--navy); }
+.filter-pill.active { background: var(--navy); color: var(--white); border-color: var(--navy); }

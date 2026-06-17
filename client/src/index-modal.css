@@ -1,0 +1,66 @@
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,31,61,0.55);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+.modal {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 32px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: var(--shadow-lg);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.modal-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--navy);
+}
+.modal-close {
+  background: none;
+  color: var(--text-light);
+  padding: 4px;
+  transition: var(--transition);
+}
+.modal-close:hover { color: var(--navy); }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Filter pill (for admin pages) */
+.filter-pill {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: var(--white);
+  color: var(--text-mid);
+  border: 1.5px solid var(--cream-dark);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.filter-pill:hover  { border-color: var(--navy); color: var(--navy); }
+.filter-pill.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+@media (max-width: 500px) {
+  .form-row { grid-template-columns: 1fr; }
+  .modal { padding: 24px 18px; }
+}
