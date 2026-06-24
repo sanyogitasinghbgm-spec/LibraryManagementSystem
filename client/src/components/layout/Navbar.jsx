@@ -14,6 +14,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     try {
       await logoutUser();
+      localStorage.removeItem("token");
       setUser(null);
       toast.success("Logged out!");
       navigate("/login");
