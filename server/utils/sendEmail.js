@@ -8,6 +8,8 @@ export const sendEmail = async ({ email, subject, message }) => {
       user: process.env.SMTP_EMAIL,
       pass: process.env.SMTP_PASSWORD,
     },
+    connectionTimeout: 4000,
+    socketTimeout: 4000,
   });
   const mailOptions = {
     from: `"Library Management System" <${process.env.SMTP_EMAIL}>`,
