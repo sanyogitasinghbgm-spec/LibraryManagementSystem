@@ -1,6 +1,23 @@
 .books-filters { margin-bottom: 28px; display: flex; flex-direction: column; gap: 14px; }
-.search-form { display: flex; gap: 10px; max-width: 420px; }
-.search-form .form-input { flex: 1; }
+.search-form { display: flex; gap: 10px; max-width: 420px; width: 100%; }
+.search-input-wrapper { position: relative; flex: 1; display: flex; align-items: center; }
+.search-input-wrapper .form-input { width: 100%; padding-right: 32px; }
+.search-clear-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light, #888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color var(--transition, 0.2s ease);
+}
+.search-clear-btn:hover {
+  color: #dc3545;
+}
 .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .filter-pill {
   padding: 5px 14px;

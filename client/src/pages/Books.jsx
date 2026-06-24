@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Books.css";
 import toast from "react-hot-toast";
-import { FiSearch, FiFilter } from "react-icons/fi";
+import { FiSearch, FiFilter, FiX } from "react-icons/fi";
 import { getAllBooks, borrowBook } from "../api/index.js";
 import BookCard from "../components/ui/BookCard.jsx";
 
@@ -15,11 +15,12 @@ export default function Books() {
   const [avail, setAvail]       = useState("");
   const [borrowing, setBorrowing] = useState(null);
 
-  const fetchBooks = async () => {
+  const fetchBooks = async (searchOverride) => {
     setLoading(true);
     try {
       const params = {};
-      if (search)           params.search = search;
+      const activeSearch = typeof searchOverride === "string" ? searchOverride : search;
+      if (activeSearch)           params.search = activeSearch;
       if (category !== "All") params.category = category;
       if (avail)            params.availability = avail;
       const { data } = await getAllBooks(params);
@@ -36,6 +37,11 @@ export default function Books() {
   const handleSearch = (e) => {
     e.preventDefault();
     fetchBooks();
+  };
+
+  const handleClear = () => {
+    setSearch("");
+    fetchBooks("");
   };
 
   const handleBorrow = async (bookId) => {
@@ -59,8 +65,15 @@ export default function Books() {
 
         <div className="books-filters">
           <form onSubmit={handleSearch} className="search-form">
-            <input className="form-input" placeholder="Search by title..."
-              value={search} onChange={(e) => setSearch(e.target.value)} />
+            <div className="search-input-wrapper">
+              <input className="form-input" placeholder="Search by title..."
+                value={search} onChange={(e) => setSearch(e.target.value)} />
+              {search && (
+                <button type="button" onClick={handleClear} className="search-clear-btn" title="Clear search">
+                  <FiX size={16} />
+                </button>
+              )}
+            </div>
             <button className="btn btn-primary" type="submit"><FiSearch size={16} /></button>
           </form>
           <div className="filter-row">
