@@ -57,7 +57,6 @@ export default function Books() {
         <h1 className="section-title">Browse Books</h1>
         <p className="section-sub">Find and borrow books from our collection</p>
 
-        {/* Filters */}
         <div className="books-filters">
           <form onSubmit={handleSearch} className="search-form">
             <input className="form-input" placeholder="Search by title..."
@@ -80,7 +79,6 @@ export default function Books() {
           </div>
         </div>
 
-        {/* Grid */}
         {loading ? (
           <div className="spinner" />
         ) : books.length === 0 ? (

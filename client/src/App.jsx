@@ -15,7 +15,6 @@ import AdminBooks from "./pages/admin/AdminBooks.jsx";
 import AdminBorrows from "./pages/admin/AdminBorrows.jsx";
 import AdminUsers from "./pages/admin/AdminUsers.jsx";
 
-// ── Protected Route ──
 const Protected = ({ children, adminOnly = false }) => {
   const { user, loading } = useAuth();
   if (loading) return <div className="spinner" />;
@@ -23,41 +22,31 @@ const Protected = ({ children, adminOnly = false }) => {
   if (adminOnly && user.role !== "Admin") return <Navigate to="/" replace />;
   return children;
 };
-
-// ── Public Route (redirect if logged in) ──
 const PublicOnly = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div className="spinner" />;
   if (user) return <Navigate to="/" replace />;
   return children;
 };
-
 const AppRoutes = () => (
   <>
     <Navbar />
     <Routes>
-      {/* Public */}
       <Route path="/login"           element={<PublicOnly><Login /></PublicOnly>} />
       <Route path="/register"        element={<PublicOnly><Register /></PublicOnly>} />
       <Route path="/verify-otp"      element={<PublicOnly><VerifyOTP /></PublicOnly>} />
       <Route path="/forgot-password" element={<PublicOnly><ForgotPassword /></PublicOnly>} />
       <Route path="/reset-password/:token" element={<PublicOnly><ResetPassword /></PublicOnly>} />
-
-      {/* Protected */}
       <Route path="/"          element={<Protected><Home /></Protected>} />
       <Route path="/books"     element={<Protected><Books /></Protected>} />
       <Route path="/my-borrows" element={<Protected><MyBorrows /></Protected>} />
-
-      {/* Admin */}
       <Route path="/admin/books"   element={<Protected adminOnly><AdminBooks /></Protected>} />
       <Route path="/admin/borrows" element={<Protected adminOnly><AdminBorrows /></Protected>} />
       <Route path="/admin/users"   element={<Protected adminOnly><AdminUsers /></Protected>} />
-
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   </>
 );
-
 export default function App() {
   return (
     <BrowserRouter>

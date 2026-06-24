@@ -102,7 +102,6 @@ export default function AdminBooks() {
           </div>
         )}
 
-        {/* Modal */}
         {showModal && (
           <div className="modal-overlay" onClick={() => setShowModal(false)}>
             <div className="modal" onClick={(e) => e.stopPropagation()}>

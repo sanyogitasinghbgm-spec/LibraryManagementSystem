@@ -9,7 +9,6 @@ export default function Home() {
   const { user, isAdmin } = useAuth();
   const [stats, setStats] = useState({ books: 0, borrows: 0, users: 0, myActive: 0 });
   const [recentBorrows, setRecentBorrows] = useState([]);
-
   useEffect(() => {
     const fetchStats = async () => {
       try {
@@ -34,7 +33,6 @@ export default function Home() {
   return (
     <div className="page">
       <div className="container">
-        {/* Hero */}
         <div className="home-hero">
           <div>
             <h1 className="section-title">
@@ -48,8 +46,6 @@ export default function Home() {
             Browse Books <FiArrowRight size={16} />
           </Link>
         </div>
-
-        {/* Stats */}
         <div className="stats-grid">
           <div className="stat-card">
             <div className="stat-icon" style={{ background: "rgba(15,31,61,0.08)" }}>
@@ -60,7 +56,6 @@ export default function Home() {
               <p className="stat-label">Total Books</p>
             </div>
           </div>
-
           {isAdmin ? (
             <>
               <div className="stat-card">
@@ -94,8 +89,6 @@ export default function Home() {
             </div>
           )}
         </div>
-
-        {/* Recent */}
         <div style={{ marginTop: "40px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
             <h2 className="section-title" style={{ fontSize: "1.3rem", marginBottom: 0 }}>
@@ -105,7 +98,6 @@ export default function Home() {
               View All <FiArrowRight size={13} />
             </Link>
           </div>
-
           {recentBorrows.length === 0 ? (
             <div className="empty"><p>No borrow records yet.</p></div>
           ) : (

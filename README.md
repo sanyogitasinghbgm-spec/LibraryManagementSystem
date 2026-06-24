@@ -193,6 +193,131 @@ Base URL: `http://localhost:5000/api/v1`
 
 ---
 
+## API Testing & Application Screenshots
+ 
+### 1. Auth APIs
+ 
+#### Register
+![Register](./assets/register.png)
+ 
+#### OTP Verify
+![OTP Verify](./assets/otpVerify.png)
+ 
+#### Login
+![Login](./assets/login.png)
+ 
+#### Get Logged-in User (Me)
+![Get Logged-in User (Me)](./assets/getLoggedInUser.png)
+ 
+#### Logout
+![Logout](./assets/logout.png)
+ 
+#### Forgot Password
+![Forgot Password](./assets/forgotPassword.png)
+ 
+#### Reset Password
+![Reset Password](./assets/resetPassword.png)
+ 
+#### Update Password
+![Update Password](./assets/updatePassword.png)
+ 
+### 2. Book APIs
+ 
+#### Add Book
+![Add Book](./assets/addBook.png)
+ 
+#### Get All Books
+![Get All Books](./assets/getAllBooks.png)
+ 
+#### Get Single Book
+![Get Single Book](./assets/getSingleBook.png)
+ 
+#### Update Book
+![Update Book](./assets/updateBook.png)
+ 
+#### Book Updated (Result)
+![Book Updated](./assets/bookUpdated.png)
+ 
+#### Delete Book
+![Delete Book](./assets/deleteBook.png)
+ 
+#### Book Deleted (Result)
+![Book Deleted](./assets/bookDeleted.png)
+ 
+### 3. Borrow APIs
+ 
+#### Borrow a Book
+![Borrow a Book](./assets/borrowBook.png)
+ 
+#### Return a Book
+![Return a Book](./assets/returnBook.png)
+ 
+#### My Borrow Records
+![My Borrow Records](./assets/myBorrowRecords.png)
+ 
+#### All Borrow Records (Admin)
+![All Borrow Records](./assets/allBorrowRecords.png)
+ 
+### 4. User APIs
+ 
+#### Get All Users
+![Get All Users](./assets/getAllUsers.png)
+ 
+#### Add New Admin
+![Add New Admin](./assets/addNewAdmin.png)
+ 
+#### Delete User
+![Delete User](./assets/deleteUser.png)
+ 
+#### Deleted User (Result)
+![Deleted User](./assets/deletedUser.png)
+ 
+### 5. MongoDB Database — Screenshots
+ 
+The following screenshots show the actual collections and stored documents in MongoDB (via Compass or Atlas), confirming that data created through the APIs is correctly persisted with proper relationships.
+ 
+#### Users Collection
+![Users Collection](./assets/usersCollection.png)
+ 
+#### Books Collection
+![Books Collection](./assets/booksCollection.png)
+ 
+#### BorrowRecords Collection
+![BorrowRecords Collection](./assets/borrowRecordsCollection.png)
+ 
+#### Database Overview
+![Database Overview](./assets/databaseOverview.png)
+ 
+### 6. Frontend Application — Screenshots
+ 
+The following screenshots demonstrate the working frontend interface, showing how each backend feature is reflected in the user experience.
+ 
+#### Login Page
+![Login Page](./assets/loginPage.png)
+ 
+#### Register Page
+![Register Page](./assets/registerPage.png)
+ 
+#### Home / Dashboard
+![Home / Dashboard](./assets/homeDashboard.png)
+ 
+#### Browse Books Page
+![Browse Books Page](./assets/browseBooksPage.png)
+ 
+#### My Borrows Page
+![My Borrows Page](./assets/myBorrowsPage.png)
+ 
+#### Admin — Manage Books
+![Admin Manage Books](./assets/adminManageBooks.png)
+ 
+#### Admin — All Borrow Records
+![Admin All Borrow Records](./assets/adminAllBorrowRecords.png)
+ 
+#### Admin — Manage Users
+![Admin Manage Users](./assets/adminManageUsers.png)
+ 
+---
+ 
 ## Validation & Security
 
 - **JWT Authentication** — tokens are signed with a secret key and stored in HTTP-only cookies to prevent client-side script access

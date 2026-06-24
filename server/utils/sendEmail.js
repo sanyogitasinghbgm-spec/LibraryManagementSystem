@@ -9,13 +9,11 @@ export const sendEmail = async ({ email, subject, message }) => {
       pass: process.env.SMTP_PASSWORD,
     },
   });
-
   const mailOptions = {
     from: `"Library Management System" <${process.env.SMTP_EMAIL}>`,
     to: email,
     subject,
     html: message,
   };
-
   await transporter.sendMail(mailOptions);
 };

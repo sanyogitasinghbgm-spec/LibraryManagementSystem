@@ -91,8 +91,6 @@ export default function AdminUsers() {
             </table>
           </div>
         )}
-
-        {/* Add Admin Modal */}
         {showModal && (
           <div className="modal-overlay" onClick={() => setShowModal(false)}>
             <div className="modal" onClick={(e) => e.stopPropagation()}>

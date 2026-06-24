@@ -36,8 +36,6 @@ const borrowRecordSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-// ── Auto-calculate fine on return (Rs. 5 per day overdue) ──
 borrowRecordSchema.methods.calculateFine = function () {
   if (this.returnDate && this.returnDate > this.dueDate) {
     const diffTime = this.returnDate - this.dueDate;

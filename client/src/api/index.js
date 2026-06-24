@@ -13,7 +13,7 @@ export const updatePassword = (data) => API.put("/auth/update-password", data);
 // ── BOOKS ──
 export const getAllBooks = (params) => API.get("/book/all", { params });
 export const getBook    = (id)     => API.get(`/book/${id}`);
-export const addBook    = (data)   => API.post("/book/add", data);       // FormData
+export const addBook    = (data)   => API.post("/book/add", data);       
 export const updateBook = (id, data) => API.put(`/book/update/${id}`, data);
 export const deleteBook = (id)     => API.delete(`/book/delete/${id}`);
 

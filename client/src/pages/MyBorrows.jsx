@@ -18,9 +18,7 @@ export default function MyBorrows() {
       setLoading(false);
     }
   };
-
   useEffect(() => { fetchRecords(); }, []);
-
   const handleReturn = async (bookId) => {
     setReturning(bookId);
     try {
@@ -33,7 +31,6 @@ export default function MyBorrows() {
       setReturning(null);
     }
   };
-
   return (
     <div className="page">
       <div className="container">

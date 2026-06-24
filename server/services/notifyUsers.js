@@ -4,13 +4,11 @@ import { sendEmail } from "../utils/sendEmail.js";
 
 // ── Runs every day at 8:00 AM ──
 cron.schedule("0 8 * * *", async () => {
-  console.log("⏰ Running due date reminder cron job...");
-
+  console.log("Running due date reminder cron job...");
   try {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     tomorrow.setHours(0, 0, 0, 0);
-
     const dayAfter = new Date(tomorrow);
     dayAfter.setDate(dayAfter.getDate() + 1);
 
@@ -21,7 +19,6 @@ cron.schedule("0 8 * * *", async () => {
     })
       .populate("userId", "name email")
       .populate("bookId", "title");
-
     for (const record of dueSoonRecords) {
       await sendEmail({
         email: record.userId.email,
@@ -40,8 +37,7 @@ cron.schedule("0 8 * * *", async () => {
       { status: "borrowed", dueDate: { $lt: new Date() } },
       { status: "overdue" }
     );
-
-    console.log(`✅ Sent ${dueSoonRecords.length} reminders.`);
+    console.log(`Sent ${dueSoonRecords.length} reminders.`);
   } catch (error) {
     console.error("Cron job error:", error.message);
   }

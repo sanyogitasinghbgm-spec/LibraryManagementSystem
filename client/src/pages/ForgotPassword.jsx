@@ -7,7 +7,6 @@ export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -21,7 +20,6 @@ export default function ForgotPassword() {
       setLoading(false);
     }
   };
-
   return (
     <div className="auth-page">
       <div className="auth-left">

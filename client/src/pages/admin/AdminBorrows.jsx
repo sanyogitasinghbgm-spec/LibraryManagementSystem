@@ -28,8 +28,6 @@ export default function AdminBorrows() {
       <div className="container">
         <h1 className="section-title">All Borrow Records</h1>
         <p className="section-sub">{records.length} total records</p>
-
-        {/* Filter pills */}
         <div style={{ display: "flex", gap: "8px", marginBottom: "24px", flexWrap: "wrap" }}>
           {["all", "borrowed", "returned", "overdue"].map((s) => (
             <button key={s}
@@ -40,7 +38,6 @@ export default function AdminBorrows() {
             </button>
           ))}
         </div>
-
         {loading ? <div className="spinner" /> : filtered.length === 0 ? (
           <div className="empty"><p>No records found.</p></div>
         ) : (

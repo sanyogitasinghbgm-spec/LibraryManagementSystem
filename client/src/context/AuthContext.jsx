@@ -6,8 +6,7 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser]       = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // On app load — check if already logged in
+  
   useEffect(() => {
     const fetchUser = async () => {
       try {

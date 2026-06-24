@@ -45,8 +45,6 @@ const bookSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-// Auto-set availability based on quantity
 bookSchema.pre("save", function (next) {
   this.availability = this.quantity > 0;
   next();
