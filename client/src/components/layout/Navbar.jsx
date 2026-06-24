@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="nav-actions">
           <span className="nav-user">
             <FiUser size={15} />
-            {user.name.split(" ")[0]}
+            <span>{user.name.split(" ")[0]}</span>
             {isAdmin && <span className="admin-pill">Admin</span>}
           </span>
           <button className="logout-btn" onClick={handleLogout}>
