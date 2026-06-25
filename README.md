@@ -49,7 +49,7 @@ Key functional highlights include:
 | ODM | Mongoose | ^8.x |
 | Authentication | JSON Web Token (jsonwebtoken) | ^9.x |
 | Password Hashing | bcrypt | ^5.x |
-| Email Service | Nodemailer (Gmail SMTP) | ^6.x |
+| Email Service | Brevo API | ^6.x |
 | Media Upload | Cloudinary + express-fileupload | ^1.x |
 | Task Scheduling | node-cron | ^3.x |
 | Environment Config | dotenv | ^16.x |
