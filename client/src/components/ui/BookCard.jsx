@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { FiBook, FiUser, FiTag } from "react-icons/fi";
 import "./BookCard.css";
 
 export default function BookCard({ book, onBorrow, borrowing }) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="book-card">
       <div className="book-cover">
-        {book.coverImage?.url ? (
-          <img src={book.coverImage.url} alt={book.title} />
+        {book.coverImage?.url && !imgError ? (
+          <img src={book.coverImage.url} alt={book.title} onError={() => setImgError(true)} />
         ) : (
           <div className="book-cover-placeholder">
             <FiBook size={36} />
